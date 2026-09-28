@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Junior Accounting ",
+    "department": "Engineering",
+    "location": "Hyderabad",
+    "type": "Full-time",
+    "deadline": "aug 30 2026",
+    "id": "job_1787823132728",
+    "slug": "junior-accounting",
+    "status": "published",
+    "closed": false,
+    "createdAt": "2026-08-27T09:32:12.731Z"
+  },
+  {
+    "title": "junior developer",
+    "department": "Engineering",
+    "location": "hyderabad",
+    "type": "Full-time",
+    "deadline": "aug 28 2026",
+    "id": "job_1787677255365",
+    "slug": "junior-developer",
+    "status": "published",
+    "closed": false,
+    "createdAt": "2026-08-25T17:00:55.366Z"
+  }
+]

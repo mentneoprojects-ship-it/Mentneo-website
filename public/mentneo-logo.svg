@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Mentneo logo</title>
+  <desc id="desc">Angular blue and violet Mentneo mark surrounding a white center.</desc>
+  <defs>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#526dff"/><stop offset=".55" stop-color="#5d77ff"/><stop offset="1" stop-color="#d52dff"/></linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#57b7ff"/><stop offset=".55" stop-color="#1176d9"/><stop offset="1" stop-color="#0d4fa3"/></linearGradient>
+    <linearGradient id="inner" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#d9d7eb"/></linearGradient>
+  </defs>
+  <path fill="url(#left)" d="M44 255 112 91l143-27 77 99-55 52-48-61-70 13-39 88 42 104-64 76z"/>
+  <path fill="#401a83" d="m112 91 143-27 77 99-55 52-48-61-70 13z" opacity=".9"/>
+  <path fill="url(#right)" d="m255 64 143 27 70 164-74 166-142 27-80-102 57-48 48 61 70-14 39-90-41-105z"/>
+  <path fill="#75c8ff" d="m255 64 143 27 70 164-74-15-39-90-41-105z" opacity=".85"/>
+  <path fill="url(#inner)" d="m220 175 73 21 55 73-45 98-82-28-59-84z"/>
+  <path fill="#4b416b" d="m293 196 55 73-45 98-10-99z"/>
+  <path fill="#fff" d="m220 175 73 21-10 72-61 99-60-84z"/>
+</svg>

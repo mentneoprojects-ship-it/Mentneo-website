@@ -1,0 +1,39 @@
+import { useEffect } from 'react'
+import { InternalNavigation } from './App.jsx'
+import './SoftwareDevelopment.css'
+import './Logistics.css'
+
+const entries = [
+  { date: 'Aug 26, 2026', title: 'Connected Logistics Systems', description: 'Designing connected logistics platforms that bring transportation, shipments, fleet operations, warehouses, customers and business teams into one digital ecosystem.', status: 'Research', slug: 'connected-logistics-systems' },
+  { date: 'Aug 20, 2026', title: 'Logistics Automation', description: 'Exploring automation for shipment workflows, dispatch operations, notifications, documentation, approvals, scheduling and repetitive logistics processes.', status: 'Automation', slug: 'logistics-automation' },
+  { date: 'Aug 15, 2026', title: 'Fleet & Transportation Intelligence', description: 'Researching systems for vehicle operations, driver coordination, route information, trip management, maintenance tracking and transportation visibility.', status: 'Experiment', slug: 'fleet-transportation-intelligence' },
+  { date: 'Aug 10, 2026', title: 'Warehouse & Inventory Systems', description: 'Developing connected systems for inventory movement, warehouse operations, stock visibility, order processing and operational coordination.', status: 'Prototype', slug: 'warehouse-inventory-systems' },
+  { date: 'Aug 5, 2026', title: 'AI-Powered Logistics', description: 'Exploring AI applications for demand forecasting, route analysis, operational recommendations, customer support, anomaly detection and logistics decision support.', status: 'AI Research', slug: 'ai-powered-logistics' },
+  { date: 'Aug 1, 2026', title: 'Real-Time Logistics Analytics', description: 'Building analytics systems for shipment visibility, delivery performance, fleet operations, operational KPIs and business intelligence.', status: 'Development', slug: 'real-time-logistics-analytics' },
+]
+const capabilities = [['Shipment Management', 'Manage shipment creation, status, movement, delivery workflows and customer communication.'], ['Fleet Management', 'Support vehicle, driver, trip, maintenance and operational information.'], ['Route Intelligence', 'Use available location and operational data to support route planning and transportation decisions.'], ['Warehouse Systems', 'Connect inventory, warehouse movement, order processing and operational workflows.'], ['Workflow Automation', 'Automate repetitive operational tasks, notifications, approvals and process coordination.'], ['Customer Communication', 'Connect customers through web, mobile, messaging, notifications and support systems.'], ['AI Integration', 'Use AI for recommendations, forecasting, classification, support and decision assistance.'], ['Analytics & BI', 'Provide operational visibility across shipments, fleet, warehouse, delivery and business performance.']]
+const architecture = ['CUSTOMER / BUSINESS', 'WEB / MOBILE / COMMUNICATION', 'LOGISTICS PLATFORM', 'ORDER / SHIPMENT MANAGEMENT', 'FLEET / DRIVER SYSTEM', 'WAREHOUSE / INVENTORY', 'API & INTEGRATION LAYER', 'AI / AUTOMATION', 'TRACKING / DATA', 'ANALYTICS & BUSINESS INTELLIGENCE', 'MANAGEMENT']
+const journey = ['ORDER / SHIPMENT REQUEST', 'SHIPMENT CREATION', 'ASSIGNMENT', 'PICKUP', 'TRANSPORTATION', 'TRACKING', 'WAREHOUSE / DELIVERY PROCESSING', 'CUSTOMER NOTIFICATION', 'DELIVERY', 'PROOF / STATUS UPDATE', 'ANALYTICS', 'BUSINESS DECISION']
+const automation = ['LOGISTICS EVENT', 'BUSINESS RULES', 'WORKFLOW ENGINE', 'API / SOFTWARE / AI', 'ACTION', 'NOTIFICATION', 'STATUS UPDATE', 'ANALYTICS']
+const warehouse = ['ORDERS', 'WAREHOUSE', 'INVENTORY', 'PICKING', 'PACKING', 'DISPATCH', 'TRANSPORTATION', 'DELIVERY']
+const analytics = ['OPERATIONAL DATA', 'DATA PROCESSING', 'CENTRAL DATA LAYER', 'ANALYTICS / BI', 'DASHBOARDS / REPORTS', 'MANAGEMENT DECISIONS']
+const integration = ['LOGISTICS PLATFORM', 'API LAYER', 'INTEGRATION LAYER', 'EXTERNAL SERVICES', 'BUSINESS SYSTEMS']
+
+function StatusLabel({ status }) { return <span className="software-status">{status}</span> }
+function ResearchHeader() { return <div className="software-research-header logistics-header"><span className="section-label">LOGISTICS</span><h1>Technology, Automation<br /><em>&amp; Intelligence.</em></h1><p>Building connected logistics systems that improve transportation, shipment management, fleet operations, warehouse workflows, communication, tracking, analytics and business decision-making.</p></div> }
+function ResearchItem({ entry }) { return <article className="software-research-item logistics-item"><div className="software-research-meta"><span>Logistics</span><time>{entry.date}</time></div><div className="software-research-copy"><a href={`/logistics/${entry.slug}`}><h2>{entry.title}</h2><p>{entry.description}</p><StatusLabel status={entry.status} /></a></div></article> }
+function ArchitectureBlock({ title, items }) { return <section className="logistics-block"><span className="section-label">{title}</span><div>{items.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, '0')}</span><strong>{item}</strong>{index < items.length - 1 && <i>↓</i>}</div>)}</div></section> }
+function Capabilities() { return <section className="logistics-capabilities"><span className="section-label">LOGISTICS CAPABILITIES</span><div>{capabilities.map(([title, text]) => <div key={title}><h2>{title}</h2><p>{text}</p></div>)}</div></section> }
+function Detail({ entry }) { return <section className="software-detail logistics-detail"><span className="section-label">LOGISTICS / {entry.status}</span><h1>{entry.title}</h1><p>{entry.description}</p><StatusLabel status={entry.status} /><a className="button button-ghost" href="/logistics">Back to Logistics <span>↗</span></a></section> }
+
+function LogisticsPage({ path = '/logistics' }) {
+  useEffect(() => {
+    const industriesButton = [...document.querySelectorAll('.site-header .nav-item')].find((button) => button.textContent.trim().startsWith('Industries'))
+    industriesButton?.classList.add('active')
+    return () => industriesButton?.classList.remove('active')
+  }, [])
+  const entry = entries.find((item) => item.slug === path.split('/')[2])
+  return <main className="rd-lab-page software-page logistics-page"><InternalNavigation /><section className="software-shell"><nav className="rd-lab-categories" aria-label="Logistics sections">{['All', 'Systems', 'Automation', 'Fleet', 'Warehouse', 'Analytics'].map((category, index) => <a className={index === 0 ? 'active' : ''} href="#publications" key={category}>{category}</a>)}</nav><ResearchHeader />{entry ? <Detail entry={entry} /> : <><div className="software-research-list" id="publications">{entries.map((item) => <ResearchItem entry={item} key={item.slug} />)}</div><ArchitectureBlock title="LOGISTICS SYSTEM ARCHITECTURE" items={architecture} /><Capabilities /><ArchitectureBlock title="LOGISTICS CUSTOMER JOURNEY / OPERATIONAL FLOW" items={journey} /><ArchitectureBlock title="INTELLIGENT WORKFLOW AUTOMATION" items={automation} /><ArchitectureBlock title="WAREHOUSE & INVENTORY INTELLIGENCE" items={warehouse} /><ArchitectureBlock title="BUSINESS & OPERATIONAL INTELLIGENCE" items={analytics} /><ArchitectureBlock title="CONNECTED LOGISTICS INFRASTRUCTURE" items={integration} /><ArchitectureBlock title="LOGISTICS DATA & SECURITY / SECURITY" items={['AUTHENTICATION', 'AUTHORIZATION', 'ROLE-BASED ACCESS', 'API SECURITY', 'DATA PROTECTION', 'AUDIT LOGGING', 'BACKUPS', 'MONITORING', 'SECURE INTEGRATIONS']} /><ArchitectureBlock title="FUTURE OF LOGISTICS / FUTURE R&D" items={['PREDICTIVE DELIVERY SYSTEMS', 'ADVANCED ROUTE INTELLIGENCE', 'AI LOGISTICS AGENTS', 'AUTONOMOUS WORKFLOW EXECUTION', 'PREDICTIVE MAINTENANCE', 'INTELLIGENT WAREHOUSE SYSTEMS', 'ADVANCED DEMAND FORECASTING', 'LOGISTICS DIGITAL TWINS', 'REAL-TIME BUSINESS INTELLIGENCE', 'AUTOMATED EXCEPTION MANAGEMENT']} /></>}</section></main>
+}
+
+export default LogisticsPage

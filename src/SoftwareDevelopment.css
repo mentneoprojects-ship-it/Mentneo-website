@@ -1,0 +1,27 @@
+.software-page{background:#000;color:var(--white)}
+.software-shell{max-width:1500px;margin:0 auto;padding:118px 5vw 90px}
+.software-research-header{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);column-gap:8vw;padding:70px 0 58px;border-bottom:1px solid var(--line)}
+.software-research-header .section-label{grid-column:1/-1;margin-bottom:26px}
+.software-research-header h1{font-size:clamp(4rem,8vw,8.5rem);line-height:.85;text-transform:uppercase}
+.software-research-header h1 em{font-style:normal;color:var(--blue)}
+.software-research-header p{align-self:end;max-width:410px;margin:0;font-size:15px;color:#888}
+.software-research-list{border-top:1px solid var(--line)}
+.software-research-item{display:grid;grid-template-columns:minmax(140px,220px) minmax(0,1fr);gap:26px;padding:30px 0;border-bottom:1px solid var(--line);transition:border-color .25s,transform .25s}
+.software-research-item:hover{border-color:rgba(110,168,255,.7);transform:translateX(3px)}
+.software-research-meta{display:flex;flex-direction:column;gap:14px;padding-top:6px}
+.software-research-meta span,.software-research-meta time{font:500 11px 'IBM Plex Mono','Courier New',monospace;letter-spacing:.12em;color:#777;text-transform:uppercase}
+.software-research-copy a{display:block;color:inherit;text-decoration:none}
+.software-research-copy h2{font:500 clamp(2rem,3vw,3.3rem) 'Inter Tight',sans-serif;line-height:1.04;text-transform:uppercase;margin:0 0 16px;transition:color .25s}
+.software-research-item:hover h2{color:#fff}
+.software-research-copy p{max-width:620px;margin:0 0 16px;font-size:15px;color:#8b8b8b}
+.software-status{display:inline-block;color:var(--blue);font:500 10px 'IBM Plex Mono','Courier New',monospace;letter-spacing:.13em;text-transform:uppercase}
+.software-detail{padding:100px 0;border-top:1px solid var(--line);max-width:900px}
+.software-detail h1{font-size:clamp(3.5rem,7vw,7rem);line-height:.9;text-transform:uppercase;margin:30px 0}
+.software-detail p{max-width:650px;font-size:17px;color:#999;margin:0 0 20px}
+.software-detail .button{margin-top:48px}
+@media(max-width:800px){.software-shell{padding:110px 20px 80px}.software-research-header{display:block;padding:55px 0 42px}.software-research-header h1{font-size:clamp(3.5rem,14vw,6rem);margin-bottom:28px}.software-research-item{grid-template-columns:1fr;gap:12px;padding:24px 0}.software-research-meta{padding-top:0}.software-research-copy h2{font-size:clamp(2rem,7vw,2.8rem)}.software-detail{padding:65px 0}.software-detail h1{font-size:clamp(3rem,12vw,5rem)}}
+.case-detail-fields{margin-top:65px;border-top:1px solid var(--line)}
+.case-detail-fields>div{display:grid;grid-template-columns:180px 1fr;gap:26px;padding:22px 0;border-bottom:1px solid var(--line)}
+.case-detail-fields>div>span{font:500 10px 'IBM Plex Mono','Courier New',monospace;letter-spacing:.12em;text-transform:uppercase;color:#777}
+.case-detail-fields p{margin:0;max-width:600px;font-size:14px}
+@media(max-width:800px){.case-detail-fields{margin-top:48px}.case-detail-fields>div{grid-template-columns:1fr;gap:10px}}
